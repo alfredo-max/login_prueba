@@ -1,0 +1,12 @@
+  <?php
+    //   session_start();
+    //   if(!isset($_SESSION["usuario"])){//si no ha iniciado seccion
+    //       header("location.href=vista/login.php");// lo manda al index.php
+          
+    //   }
+       ?>
+    // <!-- si inicio seccion -->
+    // <h2>Bienvenido Usuario</h2>
+    // <?php
+    //     echo("Hola ". $_SESSION["usuario"]);
+    ?>
