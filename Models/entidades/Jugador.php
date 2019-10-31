@@ -12,6 +12,12 @@
      $this->gmail=$gmail;
      $this->nombre=$nombre;
     }
+    public function getUsername(){
+      return $this->username;
+    }
+    public function getClave(){
+      return $this->clave;
+    }
   }
 
 

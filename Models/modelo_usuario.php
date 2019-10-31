@@ -1,12 +1,12 @@
 <?php
-require_once('../modelo/conexion.php');
-   class modelo_usuario{
+// require_once('../modelo/conexion.php');
+//    class modelo_usuario{
         
 
-        public function autentificar_usuario($user, $pass){
-          //  echo("hola ".$user);
-            $sql="SELECT usuario,clave FROM jugador WHERE USUARIO = $user AND CLAVE= $pass:";
-            $resultado=conexion::conexion();
+//         public function autentificar_usuario($user, $pass){
+//           //  echo("hola ".$user);
+//             $sql="SELECT usuario,clave FROM jugador WHERE USUARIO = $user AND CLAVE= $pass:";
+//             $resultado=conexion::conexion();
 
             // $usuarioIngresado=htmlentities(addslashes($_POST["usuario"]));
             // $claveIngresada=htmlentities(addslashes($_POST["clave"]));
@@ -29,14 +29,14 @@ require_once('../modelo/conexion.php');
 
 
 
-        }
+//         }
 
         
 
 
 
 
-   }
+//    }
 
 
 
