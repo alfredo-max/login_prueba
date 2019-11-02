@@ -1,60 +1,53 @@
 <?php
+echo("hola");
+   //require("Conexion.php");
+   require_once("../powncarp/pown.php");
 
-   include_once("Conexion.php");
-   //include_once("..\entidades\Jugador.php");
-
-   class UsuarioDao {
+   // class UsuarioDao {
     
-      // public function __construct($user,$password)
-      // {
-      //    //$cnx=Conexion::Conectar();
-      //    $this->$user=$user;
-      //    $this->$password=$password;
-      // }
       
-      public static function AautentificarUsuario($user,$password){
-      //   //  $username=$Jugador->getUsername();
-          $cnx=Conexion::Conectar();
-          $sql="SELECT usuario,clave FROM jugador WHERE USUARIO = :username AND CLAVE= :clave";    
-          $resultado= $cnx->prepare($sql); 
-          $resultado->bindValue(":username",$user);
-          $resultado->bindValue(":clave",$password);
-          $resultado->execute();
-          $numeroDeRegistro=$resultado->rowCount();
-          if($numeroDeRegistro!=0){
-             return true;
-             $cnx=null;
+   //    public static function AautentificarUsuario($user,$password){
+   //    //   //  $username=$Jugador->getUsername();
+   //        $cnx=Conexion::Conectar();
+   //        $sql="SELECT * FROM usuario WHERE username = :username AND CLAVE= :clave";    
+   //        $resultado= $cnx->prepare($sql); 
+   //        $resultado->bindValue(":username",$user);
+   //        $resultado->bindValue(":clave",$password);
+   //        $resultado->execute();
+   //        $numeroDeRegistro=$resultado->rowCount();
+   //        if($numeroDeRegistro!=0){
+   //           echo("hola");
+   //          //  $filas=$resultado->fetch();
+   //          //  $usuario= new Usuario($filas["username"],$filas["clave"],$filas["email"],$filas["nombre"],$filas["tipo_usuario"]);
+   //          //  return $usuario;
+            
+   //        }else{
+   //           return null;
+   //        }
 
-          }else{
-             return false;
-          }
+   //    }
 
-      }
+   //    public static function InsertarUsuario($user,$password,$nombre,$correo){
+   //       $cnx=Conexion::Conectar();         // // verifico si ya hiciste este usuario
+   //       $verificarUsuario= "SELECT username FROM USUARIO WHERE username='$user'";
+   //       $resultado= $cnx->prepare($verificarUsuario);
+   //       $resultado->bindValue(":user",$user);
+   //       $resultado->execute();
+   //       // si ya hiciste
+   //       if($resultado->rowCount()>0){
+             
+   //           return false;
+   //       }else{
+        
+   //          $sql="INSERT INTO usuario(username,clave,email,nombre,tipo_usuario) Values ('$user','$password','$nombre','$correo','usuarioregular')";  
+   //          $resultado=$cnx->prepare($sql);          
+   //          return $resultado->execute();
 
-      public static function InsertarUsuario($user,$password,$nombre,$correo){
-         $cnx=Conexion::Conectar();
-         $sql="INSERT INTO usuario(usuario,clave,email,nombre) Values ('$user','$password','$nombre','$correo')";
-         $resultado=$cnx->prepare($sql);
-          $resultado->execute();
-        return true;
-         
-         // // verifico si ya hiciste este usuario
-         // $verificarUsuario= "SELECT usuario FROM Usuario WHERE usuario='$user'";
-         // $resultado= $cnx->prepare($verificarUsuario);
-         // // si ya hiciste
-         // if($resultado->rowCount()>0){
-         //     echo("el usuario ya hiciste");
-         // }else{
-         //    $resultado=$cnx->prepare($sql);
-         //    return $resultado->execute();
-         // }
-         //  return false;
-      }
+   //       }
+          
+   //    }
     
-
-
-
-   }
+   // }
 
 
 

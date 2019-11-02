@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -14,7 +13,7 @@ if(!isset($_SESSION["usuario"])){
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola <?php echo $_SESSION["usuario"] ?></h1>
+    <h1>Hola <?php echo $_SESSION["usuario"] ?> Regular</h1>
     <a href="../Controllers/Accion/AccionLogOut.php">cerrar session</a>
 </body>
 </html>
