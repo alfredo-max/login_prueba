@@ -8,7 +8,7 @@
 <body>
 <h1>Formulario de ingreso</h1>
   
-     <form action="../Controllers/LoginControl.php" method="POST">
+     <form action="../Controllers/Accions/LoginControl.php" method="POST">
          <input type="text"  name="username"  placeholder="Usuario" >         
          <input type="password"  name="clave"  placeholder="Contraseña" >
          <input type="submit" value="Ingresar">

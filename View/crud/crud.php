@@ -1,6 +1,6 @@
 <?php
-require_once ("../../Controllers/UsuarioControlador.php");
- $filas=getUsuarios();
+require_once (__DIR__."/../../Controllers/Controladores/UsuarioControlador.php");
+ $filas=UsuarioDao::getUsuarios();
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@ require_once ("../../Controllers/UsuarioControlador.php");
 <body>
     <h1> pagina crud</h1>
 
-    <a href="#">Crear usuario</a>
+    <a href="UserNew.php">Crear usuario</a>
      <!-- tabla usuario  -->
     <h2> Tabla De Usuarios</h2>
     <table id="tabla">
@@ -41,6 +41,7 @@ require_once ("../../Controllers/UsuarioControlador.php");
         </tbody>
 
       </table>
-
+          <a href="../HomeUsuarioAdmin.php">Atras</a>
+          <a href="../../Controllers/Accions/AccionLogOut.php">Cerrar Seccion</a>
 </body>
 </html>

@@ -6,14 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Formulario de Registro</h1>
-     <form action="../Controllers/Accions/AccionSignUp.php" method="POST">
+    <h1>Crear Usuario</h1>
+     <form action="../../Controllers/AccionUserNew.php" method="POST">
      <input type="text"  name="nombre"  placeholder="Nombre" >                                   
          <input type="text"  name="username" placeholder="Usuario" >         
          <input type="password" name="clave"    placeholder="Contraseña" >
          <input type="email"  name="correo"  placeholder="Correo" >
+         <input type="text"  name="tipo_usuario"  placeholder="Tipo de usuario" >
          <input type="submit" value="Registrar">
-         <p>¿ya tienes una cuenta? <a href="login.php">ingresa aqui</a></p>
+         <a href="UserNew.php">Crear otro usuario</a>
          
      </form>
      
