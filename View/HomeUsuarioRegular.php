@@ -13,7 +13,7 @@ if(!isset($_SESSION["usuario"])){
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola <?php echo $_SESSION["usuario"] ?> Regular</h1>
-    <a href="../Controllers/Accion/AccionLogOut.php">cerrar session</a>
+    <h1>Hola <?php echo $_SESSION["usuario"]["username"] ?> Regular</h1>
+    <a href="../Controllers/AccionLogOut.php">cerrar session</a>
 </body>
 </html>
