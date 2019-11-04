@@ -5,7 +5,9 @@ if (isset($_POST["contrasena"])) {
         $pass = $_POST["contrasena"];
         session_start();
         $cambio = UsuarioDao::CambioPass($_SESSION["usuario"],$pass);
-        header("Location: ../../View/perfil.php");
+        header("Location: ../../View/perfil.php?pswedit=1");
+    }else{
+        header("Location: ../../View/perfil.php?pswedit=0");
     }
 }
 ?>

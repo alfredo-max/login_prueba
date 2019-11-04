@@ -12,7 +12,7 @@
         
         if($userFound==null){
           echo("no registrado ingresa bien los datos");
-                  
+          header("Location: ../../View/Login.php?in=0");        
         }else{
          session_start();          
           $_SESSION["usuario"]=$userFound->getUsername();
@@ -25,10 +25,7 @@
              header("Location:../../View/HomeUsuarioAdmin.php");             
              break;
           }
-       
-       }
-
-
+        }
      }else{
           echo("hay un dato vacio");
      }

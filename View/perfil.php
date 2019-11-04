@@ -50,6 +50,15 @@ if (!isset($_SESSION["usuario"])) {
             <div class="col-sm-6 text-center bg-dark text-light">
                 <br><br><h3>Perfil</h3><br>
                 <?php
+                if(isset($_GET["pswedit"]) && $_GET["pswedit"]==0){
+                    echo '<div class="alert alert-warning" role="alert">
+                            No se ha cambiado la contraseña
+                            </div>';
+                }else if(isset($_GET["pswedit"]) && $_GET["pswedit"]==1){
+                    echo '<div class="alert alert-success" role="alert">
+                            Contraseña cambiada
+                            </div>';
+                }
                 require ("../Controllers/Accions/AccionVerPerfil.php");
                 $nombre = $usuario->getNombre();
                 $usrname = $usuario->getUserName();

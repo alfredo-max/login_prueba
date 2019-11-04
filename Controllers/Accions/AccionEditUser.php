@@ -19,10 +19,10 @@ $tipo_usuario=$_POST["tipo_usuario"];
 $band=UsuarioControlador::EditarUsuario($userRealObject,$user,$nombre,$pass,$email,$tipo_usuario);
  
 if($band==true){
-   // header("Location:../../View/crud/crud.php");
+   header("Location:../../View/crud/crud.php?in=1");
    echo $band;
 }else{
-    echo("no se actualizo");
+    header("Location:../../View/crud/crud.php?in=0");
 }
 
 

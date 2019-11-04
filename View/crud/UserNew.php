@@ -44,6 +44,13 @@
            <div class="col-4 bg-dark text-light">
                 <div class="row bg-transparent"><div class="col-12 text-center"><h3> Crear Usuario</h3></div></div>
                     <div class="form col-12 bg-transparent">
+                        <?php
+                        if(isset($_GET["reg"]) && $_GET["reg"]==0){
+                            echo '<div class="alert alert-warning" role="alert">
+                            Debe llenar todos los campos
+                            </div>';
+                        }
+                        ?>
                         <form action="../../Controllers/Accions/AccionUserNew.php" method="POST">
                             <div class="col-1"></div>
                             <div class="col-10">

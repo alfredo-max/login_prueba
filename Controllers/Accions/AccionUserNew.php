@@ -15,11 +15,14 @@ if( !empty($username) && !empty($clave) && !empty($nombre) && !empty($correo) &&
    if($userInsertado==true){
        session_start();
        $_SESSION["usuario"]=$username;
-        header("Location:../../View/crud/crud.php");
+        header("Location:../../View/crud/crud.php?reg=1");
     }else{
-       echo("el usuario  ya hiciste");
-       echo "<a href='../../View/Signup.php'>volver a registrar</a>";
+        header("Location:../../View/crud/crud.php?reg=2");    
+       //echo("el usuario  ya hiciste");
+       //echo "<a href='../../View/Signup.php'>volver a registrar</a>";
     }
+}else{
+    header("Location:../../View/crud/UserNew.php?reg=0");
 }
 
 ?>

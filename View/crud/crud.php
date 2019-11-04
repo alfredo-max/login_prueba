@@ -61,8 +61,27 @@ require_once (__DIR__."/../../Controllers/Controladores/UsuarioControlador.php")
             <?php
             if(isset($_GET["elim"])){
                 if ($_GET["elim"]==1) {
-                    echo "<h4> style='color: green;'>Usuario eliminado</h4>";
+                    echo '<div class="alert alert-success" role="alert">
+                            Usuario Eliminado
+                            </div>';
                 }
+            }
+            if(isset($_GET["in"]) && $_GET["in"]==1) {   echo '<div class="alert alert-success" role="alert">
+                                                                Usuario Editado
+                                                                </div>';
+            }
+            if(isset($_GET["reg"]) && $_GET["reg"]==0){
+                echo '<div class="alert alert-warning" role="alert">
+                            Debe completar los datos
+                            </div>';
+            }else if(isset($_GET["reg"]) && $_GET["reg"]==1){
+                echo '<div class="alert alert-success" role="alert">
+                            Usuario registrado
+                            </div>';
+            }else if(isset($_GET["reg"]) && $_GET["reg"]==2){
+                echo '<div class="alert alert-success" role="alert">
+                            Ese usuario está en uso
+                            </div>';
             }
             ?>
             <table id="tabla" class="table table-dark text-light">

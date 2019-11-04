@@ -36,7 +36,12 @@ session_abort();
                     <div class="form-group">
                         <input type="password"  name="clave"  placeholder="Contraseña" class="form-control">
                     </div>
-                    <input type="submit" value="Ingresar" class="btn btn-primary">
+                    <?php if(isset($_GET["in"]) && ($_GET["in"]==0)) 
+                        echo '<div class="alert alert-danger" role="alert">
+                                Datos incorrectos!
+                                </div>';
+                    ?>
+                    <input type="submit" name="Ingresar" value="Ingresar" class="btn btn-primary">
                     <p>¿no tienes una cuenta? <a href="signup.php">ingresa aqui</a></p>
                 </form>
             </div>
