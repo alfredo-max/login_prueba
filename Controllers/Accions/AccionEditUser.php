@@ -1,21 +1,30 @@
 <?php
-
+// aca validamos los datos(aun no lo he hecho) para luego mandarlo al controlador
 require_once(__DIR__."/../Controladores/UsuarioControlador.php");
-require_once("../../Models/Entidad/Usuario.php");
-
 session_start();
-if(!isset($_SESSION["usuario"])){
+if(!isset($_SESSION["usuarioEditar"])){
  header("Location:../../index.html");
 }
 
-$usuario= UsuarioControlador::getUsuario($_SESSION["usuario"]);
+// usuario original
+$userRealObject= UsuarioControlador::getUsuario($_SESSION["usuarioEditar"]);
 
 
-                 
-                //   echo("Nuevo Nombre: ".$usuario->getNombre()."<br>");
-                //   echo("Nuevo UserName: ".$usuario->getUserName()."<br>");
-                //   echo("Nuevo Email: ".$usuario->getEmail()."<br>");
-                //   echo("Nuevo TipoUsuario: ".$usuario->getTipoUsuario()."<br>");
+$user=$_POST["username"];
+$nombre=$_POST["nombre"];
+$email=$_POST["email"];
+$pass=$_POST["clave"];
+$tipo_usuario=$_POST["tipo_usuario"];
+
+$band=UsuarioControlador::EditarUsuario($userRealObject,$user,$nombre,$pass,$email,$tipo_usuario);
+ 
+if($band==true){
+   // header("Location:../../View/crud/crud.php");
+   echo $band;
+}else{
+    echo("no se actualizo");
+}
+
 
 ?>
 
