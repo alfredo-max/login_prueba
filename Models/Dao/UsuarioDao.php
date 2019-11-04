@@ -87,12 +87,8 @@ require("Conexion.php");
       public static function EditarUsuario($consulta,$username){
           $cnx= Conexion::Conectar();
           $sql = "UPDATE usuario SET $consulta WHERE username='$username'";
-          $resultado= $cnx->prepare($sql);
-         //  $resultado->bindValue(":con",$consulta);
-         //  $resultado->bindValue(":user",$username);
-        return $resultado->execute();
-        // return $sql;
-                 
+          $resultado= $cnx->prepare($sql);      
+        return $resultado->execute();               
       }
 
       public static function CambioPass($username, $contrasena){

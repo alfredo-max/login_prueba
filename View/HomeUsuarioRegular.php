@@ -2,13 +2,11 @@
 session_start();
 if (isset($_SESSION["tipo"])) {
   if($_SESSION["tipo"]=='usuario_admin') header("Location: HomeUsuarioAdmin.php");
+}else{
+    header("Location:../index.php");
 }
 session_abort();
-session_start();
-// si no se ha iniciado seccion
-if(!isset($_SESSION["usuario"])){
-   header("Location:../index.html");
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +37,7 @@ if(!isset($_SESSION["usuario"])){
                         <a href="perfil.php" class="nav-link active">';echo $_SESSION["usuario"];echo '</a>
                     </li>
                     <li>
-                        <a href="../controlador/logout.php" class="nav-link">Cerrar sesión</a>
+                        <a href="../controllers/Accions/AccionlogOut.php" class="nav-link">Cerrar sesión</a>
                     </li>
                 </ul>
                 ';
