@@ -57,6 +57,16 @@ require("Conexion.php");
           
       }
 
+      public static function getUsuario($usuario){
+         $cnx= Conexion::Conectar();
+         $sql= "SELECT username FROM usuario where username=:user";
+         $resultado= $cnx->prepare($sql);
+         $resultado->bindValue(":user",$usuario->getUserName());
+         $resultado->execute();
+         $fila= $resultado->fetch();
+         return $fila;         
+      }
+
       public static function getUsuarios(){
          $cnx= Conexion::Conectar();
          $sql= "SELECT  username,email,nombre,tipo_usuario FROM usuario";

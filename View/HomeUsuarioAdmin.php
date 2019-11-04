@@ -24,7 +24,7 @@ if(!isset($_SESSION["usuario"])){
 <body>
     <h1>Hola <?php echo $_SESSION["usuario"]?> Administrador</h1>
     <a href="crud/crud.php">CROUD</a>
-
+    <a href="../Controllers/Accions/AccionVerPerfil.php">Mi perfil</a>
     <a href="../Controllers/Accions/AccionLogOut.php">cerrar session</a>
 </body>
 </html>

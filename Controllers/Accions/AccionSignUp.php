@@ -11,7 +11,7 @@ $correo=$_POST["correo"];
 
  if( !empty($username) && !empty($clave) && !empty($nombre) && !empty($correo)){
        
-     $userInsertado=UsuarioControlador::InsertarUsuario($username,$clave,$nombre,$correo);
+     $userInsertado=UsuarioControlador::InsertarUsuario($username,$clave,$nombre,$correo,"usuario_regular");
     
     //si se inserto correctamente
     if($userInsertado==true){

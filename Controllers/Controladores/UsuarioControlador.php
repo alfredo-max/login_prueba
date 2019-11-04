@@ -11,18 +11,24 @@ class UsuarioControlador{
        $userObject->setClave($pass);
        return UsuarioDao::Login($userObject);
     }
-    function InsertarUsuario($user,$pass,$clave,$email){
+    function InsertarUsuario($user,$pass,$clave,$email,$tipoUsuario){
       $userObject= new Usuario();
       $userObject->setUsername($user);
       $userObject->setClave($pass);
       $userObject->setNombre($clave);
       $userObject->setEmail($email);
-      $userObject->setTipoUsuario("usuario_regular");
+      $userObject->setTipoUsuario($tipoUsuario);
       return UsuarioDao::InsertarUsuario($userObject);
+    }
+    function getUsuario($user){
+      $userObject= new Usuario();
+      $userObject->setUserName($user);
+      return UsuarioDao::getUsuario($userObject);
     }
     function getUsuarios(){
       return UsuarioDao::getUsuarios();
     }
+    
 
 }
 
