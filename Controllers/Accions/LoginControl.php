@@ -32,5 +32,5 @@
      }else{
           echo("hay un dato vacio");
      }
-     echo ("a href='../../View/Login.php'>Volver a ingresar</a>");
+     echo ("<a href='../../View/Login.php'>Volver a ingresar</a>");
   ?>
