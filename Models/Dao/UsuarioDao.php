@@ -64,8 +64,7 @@ require("Conexion.php");
          $resultado->bindValue(":user",$usuario->getUserName());
          $resultado->execute();
          $fila= $resultado->fetch();
-         return $fila;   
-          
+         return $fila;
       }
 
       public static function getUsuarios(){
@@ -84,6 +83,7 @@ require("Conexion.php");
          $resultado->bindValue(":usr",$usr);
             return $resultado->execute();
       }
+
       public static function EditarUsuario($consulta,$username){
           $cnx= Conexion::Conectar();
           $sql = "UPDATE usuario SET $consulta WHERE username='$username'";
@@ -93,6 +93,13 @@ require("Conexion.php");
         return $resultado->execute();
         // return $sql;
                  
+      }
+
+      public static function CambioPass($username, $contrasena){
+         $cnx = Conexion::Conectar();
+         $sql = "UPDATE usuario set clave = '$contrasena' where username = '$username' ";
+         $resultado = $cnx->prepare($sql);
+         return $resultado->execute();
       }
     
    }

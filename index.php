@@ -1,4 +1,11 @@
-
+<?php
+session_start();
+if (isset($_SESSION["tipo"])) {
+  if($_SESSION["tipo"]=='usuario_regular') header("Location: View/HomeUsuarioRegular.php");
+  if($_SESSION["tipo"]=='usuario_admin') header("Location: View/HomeUsuarioAdmin.php");
+}
+session_abort();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

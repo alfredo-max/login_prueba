@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (isset($_SESSION["tipo"])) {
+  if($_SESSION["tipo"]=='usuario_regular') header("Location: HomeUsuarioRegular.php");
+}
+session_abort();
+
 require_once (__DIR__."/../../Controllers/Controladores/UsuarioControlador.php");
  $filas=UsuarioDao::getUsuarios();
  ?>

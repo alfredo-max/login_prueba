@@ -16,7 +16,7 @@
         }else{
          session_start();          
           $_SESSION["usuario"]=$userFound->getUsername();
-      
+          $_SESSION["tipo"]=$userFound->getTipoUsuario();
            switch($userFound->getTipoUsuario()){
              case "usuario_regular":
                header("Location:../../View/HomeUsuarioRegular.php");                 

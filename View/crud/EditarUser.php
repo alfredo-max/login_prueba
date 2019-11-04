@@ -31,7 +31,6 @@ $_SESSION["usuarioEditar"]=$usuario->getUserName();
             </li>
         </ul>
         <?php
-        session_start();
             echo '
                 <ul class="nav navbar-nav ml-auto">
                     <li>
@@ -45,21 +44,41 @@ $_SESSION["usuarioEditar"]=$usuario->getUserName();
             ?>
    </nav>
 
-    <h1>Editar Usuario</h1>
-    
-         <form action="../../Controllers/Accions/AccionEditUser.php" method='POST'>
-         <input type="text"  name="nombre"  value="<?php echo $usuario->getNombre()?>" >                                   
-         <input type="text"  name="username" value="<?php echo  $usuario->getUserName()?>" >         
-         <input type="email"  name="email"  value="<?php echo $usuario->getEmail()?>" >
-         <input type="text"  name="tipo_usuario" value="<?php echo $usuario->getTipoUsuario()?>" >
-         <input type="password"  name="clave" value="<?php echo $usuario->getClave()?>" >         
-         <input type="submit" value="Actualizar">
-         <a href="UserNew.php">Crear otro usuario</a>
-    
-        </form>
-     
-     
-     
+   <div class="container">
+       <div class="row"><br><br><br></div>
+       <div class="row">
+           <div class="col-sm-4"></div>
+           <div class="form col-sm-4 bg-dark text-light">
+                <form action="../../Controllers/Accions/AccionEditUser.php" method='POST'>
+                    <div class="form-group text-center"><h3>Editar Usuario</h3></div>
+                    <div class="form-group">
+                        <label for="EjemNombre">Nombre</label><br>
+                        <input type="text"  name="nombre"  value="<?php echo $usuario->getNombre()?>" >
+                    </div>
+                    <div class="form-group">
+                        <label for="EjemUsername">Usuario</label><br>
+                        <input type="text"  name="username" value="<?php echo  $usuario->getUserName()?>" >   
+                    </div>
+                    <div class="form-group">
+                        <label for="EjemEmail">Email</label><br>
+                        <input type="email"  name="email"  value="<?php echo $usuario->getEmail()?>" >
+                    </div>
+                    <div class="form-group">
+                        <label for="EjemTipoUsr">Tipo Usuario</label><br>
+                        <input type="text"  name="tipo_usuario" value="<?php echo $usuario->getTipoUsuario()?>" >    
+                    </div>
+                    <div class="form-group">
+                        <label for="EjemClave">Contraseña</label><br>
+                        <input type="password"  name="clave" value="<?php echo $usuario->getClave()?>" >
+                    </div>  
+                    <input class="btn btn-success" type="submit" value="Actualizar">
+                    <a class="btn btn-primary" href="UserNew.php">Crear otro usuario</a>
+                </form>
+           </div>
+           <div class="col-sm-4"></div>
+       </div>
+       <div class="row"><br><br></div>
+   </div>    
 </body>
 </html> 
 
