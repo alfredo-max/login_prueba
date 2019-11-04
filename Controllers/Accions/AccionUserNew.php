@@ -8,6 +8,12 @@ $nombre=$_POST["nombre"];
 $correo=$_POST["correo"];
 $tipo_usuario=$_POST["tipo_usuario"];
 
+$username=htmlentities(addslashes($_POST["username"]));
+$clave=htmlentities(addslashes($_POST["clave"]));
+$nombre=htmlentities(addslashes($_POST["nombre"]));
+$correo=htmlentities(addslashes($_POST["correo"]));
+$tipo_usuario=htmlentities(addslashes($_POST["tipo_usuario"]));
+
 if( !empty($username) && !empty($clave) && !empty($nombre) && !empty($correo) && !empty($tipo_usuario)){
 
     $userInsertado=UsuarioControlador::InsertarUsuario($username,$clave,$nombre,$correo,$tipo_usuario);

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["tipo"])) {
+if (!isset($_SESSION["usuario"])) {
     header("Location: ../index.php");
 }
 session_abort();

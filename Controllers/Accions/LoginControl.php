@@ -2,17 +2,18 @@
 <?php // en esta carpeta recibo los datos con el metodo post de login.php
       // aca se validan los datos se mandan a la funcion login de usuario control 
       // y con lo que retorne decido si lo redirijo a la la pagina de admin o usuario regular
-    
+      session_start();
+
       require("../Controladores/UsuarioControlador.php");
      $username=htmlentities(addslashes($_POST["username"]));
      $password=htmlentities(addslashes($_POST["clave"]));
-    $userFound;
+     
      if(!empty($username) && !empty($password)){
          $userFound= UsuarioControlador::Login($username,$password);
         
         if($userFound==null){
-          echo("no registrado");
-                  
+          echo("no esta registrado");
+               
         }else{
          session_start();          
           $_SESSION["usuario"]=$userFound->getUsername();

@@ -31,19 +31,19 @@ session_abort();
                 <form action="../Controllers/Accions/AccionSignUp.php" method="POST">
                     <div class="form-group">
                         <label for="">Nombre</label>
-                        <input type="text"  name="nombre"  placeholder="Nombre" class="form-control">
+                        <input type="text"  name="nombre"  placeholder="Nombre" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="">Usuario</label>
-                        <input type="text"  name="username" placeholder="Usuario" class="form-control">
+                        <input type="text"  name="username" placeholder="Usuario" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="">Contraseña</label>
-                        <input type="password" name="clave"    placeholder="Contraseña" class="form-control">
+                        <input type="password" name="clave"    placeholder="Contraseña" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="">Correo</label>
-                        <input type="email"  name="correo"  placeholder="Correo" class="form-control">
+                        <input type="email"  name="correo"  placeholder="Correo" class="form-control" required>
                     </div>
                     <input type="submit" value="Registrar" class="btn btn-primary">
                     <p>¿ya tienes una cuenta? <a href="login.php">ingresa aqui</a></p>
