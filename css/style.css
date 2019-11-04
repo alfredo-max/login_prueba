@@ -67,7 +67,7 @@ button{
     margin: 5px 0 25px;
 }
 
-.btn{
+/*.btn{
     background-color: rgb(1,120,255);
     color: #fff;
     font-size: 19px;
@@ -80,7 +80,7 @@ button{
     background-color: rgb(1,100,255);
     border-bottom: 4px solid rgb(1,120,255);
     color: #fff;
-}
+}*/
 
 .svg-inline--fa{
     font-size: 20px;
