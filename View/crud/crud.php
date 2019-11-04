@@ -26,14 +26,16 @@ require_once (__DIR__."/../../Controllers/Controladores/UsuarioControlador.php")
 
         <tbody>
            <?php 
+
             foreach($filas as $usuario){
+                $username =$usuario['username'];
                 echo("<tr>". 
                 
                 "<td>".$usuario['username']."</td>".
                 "<td>".$usuario['email']."</td>".
                 "<td>".$usuario['nombre']."</td>".
                 "<td>".$usuario['tipo_usuario']."</td>".       
-                "<td>  <a href='#'>Editar</a>  <a href='#'>ELiminar</a> </td"    
+                "<td>  <a href='EditarUser.php?username=$username'>Editar</a>  <a href='#'>ELiminar</a> </td"    
                 ."</tr>");                  
             
             } 

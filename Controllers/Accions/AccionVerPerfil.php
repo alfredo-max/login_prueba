@@ -1,6 +1,6 @@
 <?php
 
-require_once("../Controladores/UsuarioControlador.php");
+require_once(__DIR__."/../Controladores/UsuarioControlador.php");
 require_once("../../Models/Entidad/Usuario.php");
 session_start();
 if(!isset($_SESSION["usuario"])){
@@ -8,12 +8,11 @@ if(!isset($_SESSION["usuario"])){
 }
 
 $usuario= UsuarioControlador::getUsuario($_SESSION["usuario"]);
-           //echo(" <h2>Nombre:".$usuario->getNombre()."</h2>");
-           echo($usuario->getUserName());
-           // echo(" <h2>Username:".$usuario->getUserName()."</h2>");
-            //echo(" <h2>Email:".$usuario->getEmail()."</h2>");
-            //echo(" <h2>Tipo Usuario:".$usuario->getTipoUsuario()."</h2>");
+                 
+                  echo("Nombre: ".$usuario->getNombre()."<br>");
+                  echo("UserName: ".$usuario->getUserName()."<br>");
+                  echo("Email: ".$usuario->getEmail()."<br>");
+                  echo("TipoUsuario: ".$usuario->getTipoUsuario()."<br>");
 
-           
 
 ?>
