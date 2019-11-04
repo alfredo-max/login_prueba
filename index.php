@@ -4,7 +4,7 @@ if (isset($_SESSION["tipo"])) {
   if($_SESSION["tipo"]=='usuario_regular') header("Location: View/HomeUsuarioRegular.php");
   if($_SESSION["tipo"]=='usuario_admin') header("Location: View/HomeUsuarioAdmin.php");
 }
-// session_abort();
+session_abort();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,10 +27,10 @@ if (isset($_SESSION["tipo"])) {
     <div class="row"><br><br><br><br></div>
     <div class="row">
       <div class="col-sm-2"></div>
-      <div class="col-sm-8 text-center bg-light">
-          <h1>Bienvenido</h1>
-          <a href="View/Login.php">Iniciar sesión aquí</a><br>
-          <a href="View/Signup.php">Registrarse aqui</a>
+      <div class="col-sm-8 text-center bg-dark text-light">
+          <br><h1>Bienvenido</h1><br><br>
+          <a class="btn btn-primary" href="View/Login.php">Iniciar sesión aquí</a><br><br>
+          <a class="btn btn-primary" href="View/Signup.php">Registrarse aqui</a><br><br>
       </div>
       <div class="col-sm-2"></div>
     </div>

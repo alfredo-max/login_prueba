@@ -1,9 +1,9 @@
 <?php
 session_start();
 if (!isset($_SESSION["usuario"])) {
-    header("Location:../index.php");
+    header('Location: ../index.php');
 }
-// session_abort();
+//  session_abort();
 ?>
 <html lang="en">
 <head>
@@ -36,7 +36,7 @@ if (!isset($_SESSION["usuario"])) {
                         <a href="../Controllers/Accions/AccionVerPerfil.php" class="nav-link active">';echo $_SESSION['usuario'];echo '</a>
                     </li>
                     <li>
-                        <a href="../controlador/logout.php" class="nav-link">Cerrar sesión</a>
+                        <a href="../Controllers/Accions/AccionLogOut.php" class="nav-link">Cerrar sesión</a>
                     </li>
                 </ul>
                 ';
