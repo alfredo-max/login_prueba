@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION["usuario"])) {
     header('Location: ../index.php');
 }
-//  session_abort();
+ session_abort();
 ?>
 <html lang="en">
 <head>
