@@ -31,7 +31,7 @@ $_SESSION["usuarioEditar"]=$usuario->getUserName();
             </li>
         </ul>
         <?php
-        session_start();
+       
             echo '
                 <ul class="nav navbar-nav ml-auto">
                     <li>

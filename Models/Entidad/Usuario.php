@@ -7,13 +7,7 @@
     private $tipoUsuario;
     
     
-    // public  function Usuario($username,$clave,$email,$nombre,$tipo_usuario){
-    //  $this->username=$username;
-    //  $this->clave=$clave;
-    //  $this->email=$email;
-    //  $this->nombre=$nombre;
-    //  $this->tipoUsuario=$tipo_usuario;
-    // }
+   
     public function getUserName(){
       return $this->username;
     }
