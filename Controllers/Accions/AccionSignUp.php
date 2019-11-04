@@ -8,6 +8,10 @@ $clave=$_POST["clave"];
 $nombre=$_POST["nombre"];
 $correo=$_POST["correo"];
 
+$username=htmlentities(addslashes($_POST["username"]));
+$clave=htmlentities(addslashes($_POST["clave"]));
+$nombre=htmlentities(addslashes($_POST["nombre"]));
+$correo=htmlentities(addslashes($_POST["correo"]));
 
  if( !empty($username) && !empty($clave) && !empty($nombre) && !empty($correo)){
        

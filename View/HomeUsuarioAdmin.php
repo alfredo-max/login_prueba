@@ -48,7 +48,7 @@ session_abort();
                         <a href="perfil.php" class="nav-link active">';echo $_SESSION["usuario"];echo '</a>
                     </li>
                     <li>
-                        <a href="../controllers/Accions/AccionlogOut.php" class="nav-link">Cerrar sesión</a>
+                        <a href="../Controllers/Accions/Accionlogout.php" class="nav-link">Cerrar sesión</a>
                     </li>
                 </ul>
                 ';

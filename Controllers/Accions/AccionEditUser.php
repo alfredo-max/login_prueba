@@ -10,11 +10,12 @@ if(!isset($_SESSION["usuarioEditar"])){
 $userRealObject= UsuarioControlador::getUsuario($_SESSION["usuarioEditar"]);
 
 
-$user=$_POST["username"];
-$nombre=$_POST["nombre"];
-$email=$_POST["email"];
-$pass=$_POST["clave"];
-$tipo_usuario=$_POST["tipo_usuario"];
+
+$user=htmlentities(addslashes($_POST["username"]));
+$pass=htmlentities(addslashes($_POST["clave"]));
+$nombre=htmlentities(addslashes($_POST["nombre"]));
+$email=htmlentities(addslashes($_POST["correo"]));
+$tipo_usuario=htmlentities(addslashes($_POST["tipo_usuario"]));
 
 $band=UsuarioControlador::EditarUsuario($userRealObject,$user,$nombre,$pass,$email,$tipo_usuario);
  

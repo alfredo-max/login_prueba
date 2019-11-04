@@ -1,10 +1,11 @@
 <?php
 session_start();
-if (isset($_SESSION["tipo"])) {
-  if($_SESSION["tipo"]=='usuario_regular') header("Location: HomeUsuarioRegular.php");
-  if($_SESSION["tipo"]=='usuario_admin') header("Location: HomeUsuarioAdmin.php");
+if(isset($_SESSION["usuario"])){
+    if (isset($_SESSION["tipo"])) {
+        if($_SESSION["tipo"]=='usuario_regular') header("Location: HomeUsuarioRegular.php");
+        if($_SESSION["tipo"]=='usuario_admin') header("Location: HomeUsuarioAdmin.php");
+    }
 }
-session_abort();
 ?>
 
 <!DOCTYPE html>
@@ -31,10 +32,10 @@ session_abort();
                 <h1>Formulario de ingreso</h1>
                 <form action="../Controllers/Accions/LoginControl.php" method="POST">
                     <div class="form-group">
-                        <input type="text"  name="username"  placeholder="Usuario" class="form-control">
+                        <input type="text"  name="username"  placeholder="Usuario" class="form-control" required >
                     </div>
                     <div class="form-group">
-                        <input type="password"  name="clave"  placeholder="Contraseña" class="form-control">
+                        <input type="password"  name="clave"  placeholder="Contraseña" class="form-control" required>
                     </div>
                     <?php if(isset($_GET["in"]) && ($_GET["in"]==0)) 
                         echo '<div class="alert alert-danger" role="alert">
