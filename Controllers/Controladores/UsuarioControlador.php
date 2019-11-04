@@ -4,6 +4,7 @@
 
 require(__DIR__."/../../Models/Dao/UsuarioDao.php");
 
+
 class UsuarioControlador{
   public static function Login($user,$pass){
        $userObject= new Usuario();
@@ -37,7 +38,35 @@ class UsuarioControlador{
     public static function getUsuarios(){
       return UsuarioDao::getUsuarios();
     }
+
+    public static function EditarUsuario($usuario,$user,$name,$pass,$email,$tipoUsuario){
+      $consulta="";
+      $coma="";
+     if($usuario->getUserName()!=$user){
+        $consulta= "username ="."'$user'";
+        $coma=",";
+     }
+     if($usuario->getNombre()!=$name){
+      $consulta= $consulta.$coma."nombre ="."'$name'";
+      $coma=",";
+   }
+     if($usuario->getClave()!=$pass){
+         $consulta= $consulta.$coma."clave ="."'$pass'"; 
+         $coma=",";
+     }
+     if($usuario->getEmail()!=$email){
+         $consulta=$consulta.$coma."email ="."'$email'"; 
+         $coma=",";
+     }
+     if($usuario->getTipoUsuario()!=$tipoUsuario){
+         $consulta = $consulta.$coma."tipo_usuario ="."'$tipoUsuario'"; 
+     }
     
+      $consultEnd = UsuarioDao::EditarUsuario($consulta,$usuario->getUserName());
+     // return $consult;
+       return $consultEnd;
+    }
+   
 
 }
 

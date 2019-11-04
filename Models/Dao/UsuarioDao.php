@@ -84,13 +84,15 @@ require("Conexion.php");
          $resultado->bindValue(":usr",$usr);
             return $resultado->execute();
       }
-      
-      public static function EditUsuario($usuario){
-         // $cnx= Conexion::Conectar();
-         // $sql = "UPDATE usuario SET ";
-
-
-         
+      public static function EditarUsuario($consulta,$username){
+          $cnx= Conexion::Conectar();
+          $sql = "UPDATE usuario SET $consulta WHERE username='$username'";
+          $resultado= $cnx->prepare($sql);
+         //  $resultado->bindValue(":con",$consulta);
+         //  $resultado->bindValue(":user",$username);
+        return $resultado->execute();
+        // return $sql;
+                 
       }
     
    }
