@@ -34,7 +34,7 @@ require_once (__DIR__."/../../Controllers/Controladores/UsuarioControlador.php")
         <tbody>
            <?php 
             foreach($filas as $usuario){
-                $usrname = $usuario['username'];
+                $username = $usuario['username'];
                 echo("<tr>". 
                 
                 "<td>".$usuario['username']."</td>".
