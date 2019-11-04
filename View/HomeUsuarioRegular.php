@@ -43,6 +43,7 @@ if(!isset($_SESSION["usuario"])){
     </nav>
     
     <h1>Hola <?php echo $_SESSION["usuario"]?> Regular</h1>
+    <a href="../Controllers/Accions/AccionVerPerfil.php">Mi perfil</a>
     <a href="../Controllers/Accions/AccionLogOut.php">cerrar session</a>
 </body>
 </html>

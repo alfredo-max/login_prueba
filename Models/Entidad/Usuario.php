@@ -14,10 +14,10 @@
     //  $this->nombre=$nombre;
     //  $this->tipoUsuario=$tipo_usuario;
     // }
-    public function getUsername(){
+    public function getUserName(){
       return $this->username;
     }
-    public function setUsername($username){
+    public function setUserName($username){
       $this->username=$username;
     }
     public function getClave(){

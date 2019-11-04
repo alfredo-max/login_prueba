@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Crear Usuario</h1>
-     <form action="../../Controllers/AccionUserNew.php" method="POST">
+     <form action="../../Controllers/Accions/AccionUserNew.php" method="POST">
      <input type="text"  name="nombre"  placeholder="Nombre" >                                   
          <input type="text"  name="username" placeholder="Usuario" >         
          <input type="password" name="clave"    placeholder="Contraseña" >
