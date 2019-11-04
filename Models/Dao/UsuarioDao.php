@@ -65,9 +65,16 @@ require("Conexion.php");
          $filas= $resultado->fetchAll();
          return $filas;         
       }
+
+      public static function EliminarUsuario($usr){
+         $cnx = Conexion::Conectar();
+         $sql = "DELETE from usuario where username=:usr";
+         $resultado = $cnx->prepare($sql);
+         $resultado->bindValue(":usr",$usr);
+            return $resultado->execute();
+      }
     
    }
-
 
 
 

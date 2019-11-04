@@ -14,6 +14,13 @@ require_once (__DIR__."/../../Controllers/Controladores/UsuarioControlador.php")
     <a href="UserNew.php">Crear usuario</a>
      <!-- tabla usuario  -->
     <h2> Tabla De Usuarios</h2>
+    <?php
+    if(isset($_GET["elim"])){
+        if ($_GET["elim"]==1) {
+            echo "<h4 style='color: green;'>Usuario eliminado</h4>";
+        }
+    }
+    ?>
     <table id="tabla">
         <thead>
         <tr>
@@ -27,13 +34,14 @@ require_once (__DIR__."/../../Controllers/Controladores/UsuarioControlador.php")
         <tbody>
            <?php 
             foreach($filas as $usuario){
+                $usrname = $usuario['username'];
                 echo("<tr>". 
                 
                 "<td>".$usuario['username']."</td>".
                 "<td>".$usuario['email']."</td>".
                 "<td>".$usuario['nombre']."</td>".
                 "<td>".$usuario['tipo_usuario']."</td>".       
-                "<td>  <a href='#'>Editar</a>  <a href='#'>ELiminar</a> </td"    
+                "<td>  <a href='#'>Editar</a>  <a href='../../Controllers/Accions/AccionEliminarUsuario.php?usr=$usrname'>ELiminar</a> </td"    
                 ."</tr>");                  
             
             } 
