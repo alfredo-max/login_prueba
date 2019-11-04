@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION["tipo"])) {
-    header("Location: ../index.php");
+if (!isset($_SESSION["usuario"])) {
+    header("Location:../index.php");
 }
-session_abort();
+// session_abort();
 ?>
 <html lang="en">
 <head>

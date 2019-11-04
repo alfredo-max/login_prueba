@@ -11,7 +11,7 @@
          $userFound= UsuarioControlador::Login($username,$password);
         
         if($userFound==null){
-          echo("no registrado");
+          echo("no registrado ingresa bien los datos");
                   
         }else{
          session_start();          
