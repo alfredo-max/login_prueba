@@ -32,7 +32,7 @@ if(!isset($_SESSION["usuario"])){
             echo '
                 <ul class="nav navbar-nav ml-auto">
                     <li>
-                        <a href="perfilroot.php" class="nav-link active">';echo $_SESSION["usuario"]->getNombre();echo '</a>
+                        <a href="../Controllers/Accions/AccionVerPerfil.php" class="nav-link active">';echo $_SESSION["usuario"];echo '</a>
                     </li>
                     <li>
                         <a href="../controlador/logout.php" class="nav-link">Cerrar sesión</a>
@@ -42,8 +42,17 @@ if(!isset($_SESSION["usuario"])){
             ?>
     </nav>
     
-    <h1>Hola <?php echo $_SESSION["usuario"]?> Regular</h1>
-    <a href="../Controllers/Accions/AccionVerPerfil.php">Mi perfil</a>
-    <a href="../Controllers/Accions/AccionLogOut.php">cerrar session</a>
+    <div class="container">
+        <div class="row"><br><br><br></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 bg-dark text-light text-center"><br><br><br>
+            <h3>Hola <?php echo $_SESSION["usuario"]?></h3><br><br>
+            <a class="btn btn-primary" href="../Controllers/Accions/AccionVerPerfil.php">Mi perfil</a><br><br><br>
+            <a class="btn btn-primary" href="../Controllers/Accions/AccionLogOut.php">cerrar session</a><br><br><br>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
 </body>
 </html>
